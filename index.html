@@ -23,12 +23,12 @@
           </div>
         </div>
         <div class="text-center py-5 font-bold">
-            <button class="btn bg-[#B4F461]">Donation</button>
-            <button class="btn bg-[#ffffff]">History</button>
+            <button id="donateTabBtn" class="btn bg-[#B4F461]">Donation</button>
+            <button id="historyTabBtn" class="btn bg-[#ffffff]">History</button>
         </div>
     </header>
     <main class="grid justify-items-center">
-        <section class="container">
+        <section id="donateTab" class="container">
         <div class="card card-side bg-base-100 border mb-6">
             <figure>
               <img src="images/noakhali.png" alt="noakhali" class="pl-6 py-6 object-cover">
@@ -74,8 +74,11 @@
             </div>
           </div>
         </section>
-        <section>
+
+        <section id="historyTab" class="container hidden">
+            Donation History
         </section>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>
