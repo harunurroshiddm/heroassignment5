@@ -55,7 +55,7 @@ document.getElementById("donateTabBtn").addEventListener("click", function(){
 
 document.getElementById('noakhaliDonateBtn')
 .addEventListener('click', function(event){
-    event.preventDefault();
+    
     const currentBalnace = document.getElementById('accountBalance').innerText;
     const currentBalnaceAmount = parseFloat(currentBalnace);
     
@@ -84,4 +84,13 @@ if (isNaN(noakhaliDonateAmount)){
     const noakhaliTillDonateAmount = parseFloat(noakhaliTillDonate);
     const noakhaliDonateUpdate = noakhaliTillDonateAmount + noakhaliDonateAmount;
     document.getElementById('noakhaliTillNowDonate').innerText = noakhaliDonateUpdate;
+    
+    const noakhaliDonateCampaign = document.getElementById('noakhaliDonateCampaign').innerText;
+
+    const div = document.createElement("div");
+    div.classList.add("border", "rounded-lg", "py-4", "px-2", "mb-2");
+
+    div.innerHTML = `<p class ='p-3'><span class='font-bold'>${noakhaliDonateAmount} Taka is Donated for ${noakhaliDonateCampaign}</span><br><span class='text-sm'>Date: ${Date()}</span></p>`;
+    document.getElementById("historyTab").appendChild(div);
 })
+
