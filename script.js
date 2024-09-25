@@ -51,3 +51,37 @@ document.getElementById("donateTabBtn").addEventListener("click", function(){
     );
 });
 
+
+
+document.getElementById('noakhaliDonateBtn')
+.addEventListener('click', function(event){
+    event.preventDefault();
+    const currentBalnace = document.getElementById('accountBalance').innerText;
+    const currentBalnaceAmount = parseFloat(currentBalnace);
+    
+    const noakhaliDonate = document.getElementById('noakhaliDonateAmount').value;
+    const noakhaliDonateAmount = parseFloat(noakhaliDonate);
+
+if (noakhaliDonateAmount > currentBalnaceAmount){
+    alert('Apnar mon onek boro takaw thaka dorkar.');
+        return;
+}
+
+if (noakhaliDonateAmount <= 0){
+    alert('Tui rajakar!');
+        return;
+}
+
+if (isNaN(noakhaliDonateAmount)){
+    alert('Dua na taka donate korun!');
+        return;
+}
+
+    const updateBalance = currentBalnaceAmount - noakhaliDonateAmount;
+    document.getElementById('accountBalance').innerText = updateBalance;
+
+    const noakhaliTillDonate = document.getElementById('noakhaliTillNowDonate').innerText;
+    const noakhaliTillDonateAmount = parseFloat(noakhaliTillDonate);
+    const noakhaliDonateUpdate = noakhaliTillDonateAmount + noakhaliDonateAmount;
+    document.getElementById('noakhaliTillNowDonate').innerText = noakhaliDonateUpdate;
+})
